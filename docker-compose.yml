@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+    apifirst:
+        build: .
+        restart: always
+
+        #working_dir: /msFirst
+        volumes:
+            - .:/msFirst
+        ports: 
+            - 3000:3000 
+        command: npm start
+
+    apisecond:
+        build: ../msSecond
+        restart: always
+        volumes: 
+            - ../msSecond:/msSecond
+        ports: 
+            - 4000:4000
+        command: npm start
+    apithird:
+        build: ../msThird
+        restart: always
+        volumes: 
+            - ../msThird:/msThird
+        ports: 
+            - 8082:8082
+        command: npm start
