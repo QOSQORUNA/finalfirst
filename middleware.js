@@ -16,9 +16,7 @@ module.exports = function authMiddleware(req, res, next) {
         token = token.split(' ')[1];
     }
 
-    // listo manix 
-    // pera p ahora hay q separar este middleware
-    // dejame acordamr e ;v
+
 
     try {
         jwt.decode(token, secret);

@@ -35,14 +35,14 @@ const productos = [{
     }
 ]
 
+// ruta: /api/v1/auth/token
+// router.get('/auth/token', function(req, res) {
+//     var token = jwt.encode(payload, secret);
+//     res.json(token);
+// });
 
-router.get('/auth/token', function(req, res) {
-    var token = jwt.encode(payload, secret);
-    res.json(token);
-});
 
-
-router.get('/productos', [authMiddleware], function(req, res) {
+router.get('/productos', function(req, res) {
     res.status(200).json({
         content: productos
     });
